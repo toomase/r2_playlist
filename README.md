@@ -1,2 +1,2 @@
-# r2_playlist
-Kraabi R2 õhtuse vööndi playlistid
+# R2 playlistid
+Kraabi R2 õhtuse vööndi playlistid, et nende põhjal Spotify playlistid koostada.
