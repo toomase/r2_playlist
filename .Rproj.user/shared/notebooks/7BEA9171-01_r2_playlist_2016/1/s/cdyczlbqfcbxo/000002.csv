@@ -1,0 +1,49 @@
+"0","```r
+# alamfunktsioon, mis klikib valitud saate kõik playlistid läbi ja kraabib lugude info. See on tehtud eraldi, et ei peaks iga playlisti jaoks uuesti veebilehte nullist avama.
+kraabi_playlist <- function(y, x){
+  tryCatch(
+    {
+      Sys.sleep(1)
+      # Kuupäevade valimine playlistide kuvamiseks
+      option <- remDr$findElement(using = 'xpath', 
+                                        paste(\"//*/option[@value = '\", y, \"']\", sep = \"\"))
+      # Topelt klikk, et oleks valitud
+      option$clickElement()
+      Sys.sleep(1)
+      doc <- read_html(remDr$getPageSource()[[1]])
+      playlist_raw <- doc %>%
+        html_nodes(\".playlistitem .ng-scope .ng-binding\") %>%
+        html_text() %>%
+        str_trim() %>%
+        data.frame() %>%
+        filter(. != \"\") %>%
+        mutate(indeks = y, url = x) %>%
+        select(lugu = 1, indeks, url)
+            
+        return(playlist_raw)
+    }, error = function(e) NULL
+  )
+}
+  
+# Funktsioon playlisti lugude nimekirja kraapimiseks (url = saate url, indeks = saatega seotud playlistide arv kokku)
+r2_playlist <- function(url, indeks, aasta = 2017){
+  # aasta indeks 2014-st aastast
+  tryCatch(
+    {
+      aasta_2 <- aasta - 2014 + 1
+      remDr$navigate(url)  # lehele navigeerimine
+      Sys.sleep(2)
+      # vali soovitud aasta
+      aasta <- remDr$findElement(using = 'css',
+                                 paste(\".ng-scope.ng-binding:nth-child(\", aasta_2, \")\",
+                                       sep = \"\"))
+      aasta$clickElement()
+      
+      # kliki iga saate kohta kõik valitud aasta playlistid läbi ja salvesta need maha
+      kokku <- map2_df(seq(0, indeks), url, kraabi_playlist)
+      
+      return(kokku)
+    }, error = function(e) NULL
+  )
+}
+```"

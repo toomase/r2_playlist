@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"R2 playlistist Spotify playlist\"\noutput: html_notebook\n---\n\nEesmärk on R2 lehelt kraabitud lugude nimekirjad konvertida Spotify playlistideks.\n\n```{r}\nlibrary(tidyverse)\nlibrary(stringr)\n```\n\nLae kraabitud R2 playlistid\n```{r}\nload(\"output/r2_ohtune_voond_2016.RData\")\n\nglimpse(r2_ohtune_voond)\n```\n\nLoetelu kõigist saadetest\n```{r}\nr2_ohtune_voond %>% \n  mutate(saade = str_replace_all(url, \"http://r2.err.ee/l/\", \"\")) %>% \n  distinct(saade) %>% \n  .$saade\n```\n\n\nKoosta nimekiri ühe saate lugudest, et need siis http://www.playlist-converter.net/ lehel oleva konverteri abil Spotify playlistiks muuta (copy-paste).\n```{r}\nlist <- r2_ohtune_voond %>% \n  filter(str_detect(url, \"grind\")) %>% \n  distinct(lugu) %>% \n  .$lugu\n\ncat(paste0(list, collapse = \"\\n\"))\n```\n\n",
+    "created" : 1488138922418.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "876317743",
+    "id" : "4EDDBE66",
+    "lastKnownWriteTime" : 1488060721,
+    "last_content_update" : 1488060721,
+    "path" : "~/Dropbox/DataScience/R/r2_playlist/02_r2_playlist_spotify.Rmd",
+    "project_path" : "02_r2_playlist_spotify.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

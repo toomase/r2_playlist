@@ -1,0 +1,37 @@
+"0","```r
+library(RSelenium)
+library(tidyverse)
+```"
+"1","Loading tidyverse: ggplot2
+Loading tidyverse: tibble
+Loading tidyverse: tidyr
+Loading tidyverse: readr
+Loading tidyverse: purrr
+Loading tidyverse: dplyr
+Conflicts with tidy packages ----------------------------------------------------------------
+filter(): dplyr, stats
+lag():    dplyr, stats
+"
+"0","```r
+library(rvest)
+```"
+"1","Loading required package: xml2
+
+Attaching package: ‘rvest’
+
+The following object is masked from ‘package:readr’:
+
+    guess_encoding
+"
+"0","```r
+library(rdom)
+library(stringr)
+library(lubridate)
+```"
+"1","
+Attaching package: ‘lubridate’
+
+The following object is masked from ‘package:base’:
+
+    date
+"

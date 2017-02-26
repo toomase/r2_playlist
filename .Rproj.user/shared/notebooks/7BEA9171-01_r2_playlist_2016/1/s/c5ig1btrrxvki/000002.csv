@@ -1,0 +1,79 @@
+"0","```r
+remDr <- remoteDriver(port = 4445L)
+remDr$open()
+```"
+"1","[1] \"Connecting to remote server\"
+$rotatable
+[1] FALSE
+
+$raisesAccessibilityExceptions
+[1] FALSE
+
+$firefoxOptions
+$firefoxOptions$args
+list()
+
+$firefoxOptions$profile
+[1] \"UEsDBBQACAgIAAajT0oAAAAAAAAAAAAAAAAHAAAAdXNlci5qc51WTW/bMAy971cMOW3AKqTretlOXdcBA4Z1aFDsKMgSbauRJU0fcfPvR/mjSRNHbndKbJMS+fj4yOjBUeugfLconGnxiXhWQvdf6oo0TLXMAQHNCgVi8eFtyZSH91/exJ2nYAFtrHEhudTAVKj7Z4JGG8ln/DWE1rg1qUOwxNbS19uz9Nky788U6CrU6Pjx8vK52xiwAybwR0AAHkB8l86HK4yFK0C34OJhuKbBvB4pr51pgHrupA3URU2DbJLLxXL6osAKTxAOfauvlfEwnc1oLUyrlWEC79KsSsDWpv1Tg14hWgmpaXeLQdng02W0MYKpGexhE4xRnoBzxnGjvVH7cB+n72WljUbUGmgKcKvu0edz8eC9RKtgkAsOfETcSgyUcsd8nfdVUq+JsaApPAZwmqlUzFczqExlvYt6+rIWCuHkBp8Z54DljBoz90gHysEFP4nEU6Wkt4ptQdycL1e/DDInlfbTtDG+Erf6j9RYX3++JBIvMvd3P9FjwQoTw+dCMb1eHHOuT4gypeiDRzBSnLKH/ji2RysRbrQlbS0DKOkDHvA3SneKCYkGaxnI0E0j6zC5xIUsAIphYbAB8lTzibfRkhq7xuLZtAXFUwdFl0q6OEg5VVt3rCHRYoGBaIS23N6jyat1JNrUSjfZ8IBHJ8MWmaIA/xEfnOSBGicrqak1SvJtnqoaWmw7MuSTqeazQPuTSXq5ikUju1b53b286sj4Mt2cPCab8VN3DoVJRUHLE+q160NMs+34e9yIpizRDs6YtZ4g+0xLiy0VULKowrScjLBzbwf+TEd7zIcs20Y6I/dRqYLbkl4ZO/uPc7bZo0dEbu5/XpELwnZFOk7vgW1YPyGyonpYirFH8jw6jtvBQzfEspf0NE3H5/PcQ5zFYL71SrDiSIIkOufLUxran0o1C/hIYQN6RkH3JuMtMmw2nEIZvu407UWF8sAcrwfazE3dhvTkJiI2Nls0JPmLqPiMLwYBclJMC+qRBh2Kz8X05tOL9dnYfciiEGdG8mB7QlmGFWd+t9kbnL4b67vBiQoUO6nOIpeYNR3EXuuYftJ1K9APfd1vKSeXs2Fk0U6sBMKoK5rkf4YkNeC05DXw9bder772X14/zQgTQqaI2cwgmNyZ/3dXVqaq0sthictK/14vdRlfozRitxZSJfZpWdVBnRh2e67jjf+jbHRsBNLgWtgRcZFWSQcHGO02mbR5IrFxf5xZZXZ9r0ofbb8B7JaMf1BLBwh1hce1pQMAALUMAABQSwECFAAUAAgICAAGo09KdYXHtaUDAAC1DAAABwAAAAAAAAAAAAAAAAAAAAAAdXNlci5qc1BLBQYAAAAAAQABADUAAADaAwAAAAA=\"
+
+
+$appBuildId
+[1] \"20170125094131\"
+
+$version
+[1] \"\"
+
+$platform
+[1] \"LINUX\"
+
+$proxy
+named list()
+
+$command_id
+[1] 1
+
+$nativeEvents
+[1] TRUE
+
+$specificationLevel
+[1] 0
+
+$acceptSslCerts
+[1] FALSE
+
+$processId
+[1] 59
+
+$webdriver.remote.sessionid
+[1] \"ebdb4d47-86ff-4b64-b098-57f14cfd4550\"
+
+$browserVersion
+[1] \"51.0.1\"
+
+$platformVersion
+[1] \"4.4.0-62-generic\"
+
+$XULappId
+[1] \"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}\"
+
+$browserName
+[1] \"firefox\"
+
+$takesScreenshot
+[1] TRUE
+
+$javascriptEnabled
+[1] TRUE
+
+$takesElementScreenshot
+[1] TRUE
+
+$platformName
+[1] \"linux\"
+
+$cssSelectorsEnabled
+[1] TRUE
+
+$id
+[1] \"ebdb4d47-86ff-4b64-b098-57f14cfd4550\"
+"

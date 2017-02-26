@@ -1,0 +1,43 @@
+"0","```r
+# Loetelu R2 õhtuse vööndi saadetest
+r2_saate_nimed <- read_html(\"http://r2.err.ee/l/saatesarjad\", encoding = \"utf-8\")
+# R2 Õhtuse vööndi saadete nimed ja url-id
+r2_saated <- r2_saate_nimed %>%
+    html_nodes(\"section+ section h6\") %>%
+    html_text() %>%
+    data.frame() %>%
+    select(saade = 1) %>%
+    # Saate nimest on tuletatud url. Kuna osade saadete url on erinev,
+    # siis nende url on käsitsi muudetud
+    mutate(url = str_to_lower(str_c(\"http://r2.err.ee/l/\", 
+                                    str_replace_all(saade, \" \", \"\"), sep = \"\"))) %>%
+    mutate(url = str_replace_all(url, \"ö\", \"o\")) %>%
+    mutate(url = str_replace_all(url, \"ž\", \"z\")) %>%
+    mutate(url = str_replace_all(url, \"ä\", \"a\")) %>%
+    mutate(url = ifelse(saade == \"Deeper Shades Of House\",
+                        \"http://r2.err.ee/l/deeper_shades_of_house\", url)) %>%
+    mutate(url = ifelse(saade == \"Haigla saade\",
+                        \"http://r2.err.ee/l/haigla\", url)) %>%
+    arrange(saade)
+# Saadete url vektoriks, et neid edaspidi kasutada
+saate_url <- r2_saated$url
+saate_url
+```"
+"1"," [1] \"http://r2.err.ee/l/bashmentfm\"             \"http://r2.err.ee/l/bohemiatv\"             
+ [3] \"http://r2.err.ee/l/deeper_shades_of_house\" \"http://r2.err.ee/l/eestipops\"             
+ [5] \"http://r2.err.ee/l/estonianfunkembassy\"    \"http://r2.err.ee/l/etnokonservid\"         
+ [7] \"http://r2.err.ee/l/grindtape\"              \"http://r2.err.ee/l/haigla\"                
+ [9] \"http://r2.err.ee/l/horisont\"               \"http://r2.err.ee/l/iluskohtsuudlemiseks\"  
+[11] \"http://r2.err.ee/l/jazzitup\"               \"http://r2.err.ee/l/kaabel\"                
+[13] \"http://r2.err.ee/l/keldrikassetid\"         \"http://r2.err.ee/l/klubir2\"               
+[15] \"http://r2.err.ee/l/linnadzungel\"           \"http://r2.err.ee/l/maarjamerivoo-parro\"   
+[17] \"http://r2.err.ee/l/machinenation\"          \"http://r2.err.ee/l/majamasin\"             
+[19] \"http://r2.err.ee/l/metallion\"              \"http://r2.err.ee/l/nestorjamorna\"         
+[21] \"http://r2.err.ee/l/oogruuv\"                \"http://r2.err.ee/l/ootoo\"                 
+[23] \"http://r2.err.ee/l/programm\"               \"http://r2.err.ee/l/progressioon\"          
+[25] \"http://r2.err.ee/l/punkpolitsei\"           \"http://r2.err.ee/l/rahvaomakaitse\"        
+[27] \"http://r2.err.ee/l/rockiministeerium\"      \"http://r2.err.ee/l/sinusaade\"             
+[29] \"http://r2.err.ee/l/tahetund\"               \"http://r2.err.ee/l/tallinnexpress\"        
+[31] \"http://r2.err.ee/l/tjuunin\"                \"http://r2.err.ee/l/trammjabuss\"           
+[33] \"http://r2.err.ee/l/urbanism\"               \"http://r2.err.ee/l/vibratsioon\"           
+"

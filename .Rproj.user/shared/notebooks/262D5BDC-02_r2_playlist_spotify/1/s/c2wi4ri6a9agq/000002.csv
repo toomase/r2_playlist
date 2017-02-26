@@ -1,0 +1,479 @@
+"0","```r
+list <- r2_ohtune_voond %>% 
+  filter(str_detect(url, \"grind\")) %>% 
+  distinct(lugu) %>% 
+  .$lugu
+cat(paste0(list, collapse = \"\n\"))
+```"
+"1","Camo & Krooked - Armageddon
+Ekko & Sidetrack - Hold It Up
+1991 - Jungle Cats
+Stunnah - Fantasie (Champion Remix)
+Mohican Sun - Where Did You Go
+John B - The Journey (Metrik Remix)
+Grades - King (Culture Shock Remix)
+Delta Heavy - City of Dreams
+Emeli Sande - Hurts (Dimension Remix)
+Deadmau5 - Strobe (Dimension Remix)
+1991 - Steezy
+Drumsound & Simon Bassline Smith ft. Conor Maynard - Catch Me Here
+Mob Tactics - Now is the Time
+Dan Dakota - Glow
+Memtrix - IC YR PAIN
+Wilkinson - Brand New
+Milli Major - Remember Me (Ekko & Sidetrack Remix)
+Logistics - SENTIMENTALITY
+Moko - Your Love (Culture Shock Remix)
+Duke Dumont - The Giver (Dimension Remix)
+Dimension - Jet Black
+Camo & Krooked - Anubis
+Camo & Krooked - Ember
+Camo & Krooked - Mindset
+Culture Shock - Have It All feat Raphaella Mazaheri-Asadi
+Delta Heavy - White Flag VIP
+Friction & Dimension - Kinetic
+Break - Give In To Me ft. Kyo
+Dimension - Pull Me Under ft. Raphael
+TC - Everything For A Reason
+Dzheimz & Ninja - Karjala (Headread Remix)
+Futuristik - Waterborne ft. Miyoki
+Dawn Wall - I see U
+Teddy Killerz - Unbelivable
+Technimatic - Trigger Warning
+Cyantific - Back Off
+Technimatic - Clockwise
+Jarryd James - 1000x (Spectrasoul Remix)
+Technimatic - Transference
+Rockwell feat Sam Binga, Hydroglifics - isok2behapp-e
+Futuristik - Feeling This Way ft. Charlotte Haining
+Metrik - Electric Echo feat Gunship
+Metrik - Northern Lights
+Metrik - How Far ft Romeo Testa
+Metrik - Worldwide feat Ragga Twins
+Crissy Criss, Erb N Dub & Malux feat Damien Soul - One Day
+Drumcatcher - Silver Funk
+GLXY - In Space It Never Rains
+Break - If I Could ft. Kyo
+GLXY - Astonia
+Fred V & Grafix - Rainbow Road
+Dope Ammo & Tali - Cold Rock a arty (Dossa & Locuzzed Remix)
+Tantrum Desire - Genesis (Friction Remix)
+Metrik - Destination Earth
+S.P.Y - Take Control
+Fourward - Over
+Kove - Dust
+Dub Motion - Into The Dark
+Tantrum Desire - Adventure Through Space VIP
+NCT ft RAIGN - Give In
+Whiney - Onyx
+Jonas Blue - By Your Side (DC Breaks Remix)
+NCT feat. RAIGN - Give in
+Culture Shock - Pandemic
+Delta Heavy - Bar Fight
+TC - Next Hype (Dub Motion Remix)
+Tantrum Desire - Tesoro
+Killer Hertz - Cryogenics
+Insideinfo - Revolution (feat. Miss Trouble)
+Tantrum Desire - Pump (Drumsound & Bassline Smith Remix)
+Fred V & Grafix - Say Here
+Blaine Stranger - I See The End
+Technimatic - We Look For Patterns VIP
+Break - Confidential
+Calyx & Teebee - Long Gone
+Ivy Lab - Focus
+Alan Walker - Faded (Low5 Bootleg)
+Fred V & Grafix - Constellation
+Maduk & Nymfo - Motions
+London Electricity & Keeno - Artificial Skin (Keeno VIP)
+Netsky - Tomorrows Another Day VIP
+Malaky - If you feel
+Krakota - Sea Air
+Mat Zo - MAD
+Dub Phizix - Do One ft. DRS
+Mutated Forms - Wastegash (The Upbeats Remix)
+Frankee - Snarl
+Artificial Intelligence - Pigeon Hole ft MC DRS
+Dimension - UK
+Culture Shock - Have it All feat Raphaella Mazaheri-Asadi
+Camo & Krooked - If I could ft Joe Killington
+Black Sun Empire - Caterpillar feat Virus Syndicate
+Urbandawn - Prime Expansion
+NCT - Looking Forward feat Franky Nuts
+Killer Hertz - Prometheus
+Black Sun Empire - Elusive
+Break & Kyo - Give Too Much
+Rag'n'Bone Ma - Human (Calyx & TeeBee Remix)
+Numa crew - Bass Hater (Brian Brainstorm remix)
+GLXY - Seductress
+Enei - Homeworld (Break Remix)
+Fred V & Grafix - Stay Here
+GLXY - The Hustle (2016 VIP)
+Dimension - Maschinen
+Break - Ain't no turning back
+Dj Hazard - Roll On My Level ft. Summer Rayne
+June Miller - Spin Test
+Wild Culture & Karmin - Sugar (Teddy Killerz Remix)
+Insideinfo & Mefjus - Mythos
+S9 - Warehouse
+Dossa & Locuzzed - Shag
+Camo & Krooked - Rock Paper Scissors
+Doctor P - Alphabet Soup
+Noisia - Dead limit
+Wilkinson - Too Close (Ft. Detour City) (Frankee Remix)
+Nu:Logic - Tripping In Space
+Chase & Status - End Credits
+Urbandawn - They Told Me feat Thomas Oliver
+In-Deed - Midnight Groovin'
+Underdog - Find The Groove
+Random Movement - Little Treasure
+Silence Groove - Spin With Me
+Phase 2 - The Floor
+Bachelors of Science - Before You Go
+Bcee - Thought I Knew (Bladerunner Remix)
+Soligen & Type 2 - Pretty Eyes
+Dawn Wall - I See U
+Treex - Pushin' On (Spective Remix)
+The Vanguard Project - What We Got
+The Invaders - Love Vibrations feat Dj Marky
+Decon - Say You Love Me
+Kasper - Gatsby
+Break - Who Got The Funk
+L-Side - I wish
+DLR & Total Science - On The Edge
+Bcee - Is Anyody Out There ft SPY (The Vanguard Remix)
+Kasper, Malaky & SATL - Don't Wake Me Up
+Bachelors Of Science Ft. Collette Warren & Ben Soundscape - On The LIne (Random Movement Remix)
+Hugh Hardie - Everything Was Nothing ft Benji Clements
+Ed:It - Turn To Nothing
+HumanNature - Bring It Back
+Kolectiv - Closer To The Fire (Alix Perez Remix)
+Alix Perez - Room 667 ft Skeptical
+TC ft Jakes - Rep (S.P.Y Remix)
+Need For Mirrors - Son Of Sorrow
+K-I - Cure For This (Voltage Remix)
+Philth - Mammoth
+BassBrothers - Kravitz
+Mohican Sun - Dead Sea
+Culture Shock - Low Frequency
+Signal - Elle
+Alix Perez & Zero T - The Ladders
+Command Strange - Can't Stop
+Phase - Abundance
+Rockwell - Chorus Of Disapproval
+LSB - Missing You feat. DRS & Tyler Daley
+Matrix & Ftuturebound - Fire (Killer Hertz Remix)
+Camo & Krooked - If I could ft. Joe Killington
+Trei, Northbase - Hostile Universe
+DC Breaks - Proton
+Delta Heavy - Cut Me
+Delta Heavy - Pathways
+Drumsound & Bassline - Shutdown
+Hamilton - Another Dimension
+Dossa & Locuzzed - Bad
+Insideinfo, Mefjus - Talisman
+Toronto Is Broken - Zero one
+Cynematic, Citybox - Exhale
+Mob Tactis - Now Is The Time
+Break & Spectrasoul - Inside
+Spectrem - Run
+Document One - Small Steps
+Calyx & TeeBee - Elevate This Sound
+The Prototypes - Transmission
+Documnet One - Get Da Funk
+Document One - Chasing Stars
+Break - Simpler Times ft. Kyo
+Atlantic Connection - Bluelines
+Treex - Mad Habit
+Khemikal - These Vibrations
+Friction Vs. Fourward - Battle Scars ft. Jakes (Alix Perez Remix)
+1991 - Bad
+Riton ft. Kah-Lo - Rinse & Repeat (Rockwell Remix)
+Soligen & Type 2 - Can't Go (Break Remix)
+Tehnimatic - Montecristo
+Chase & Status - All Goes Wrong (Dawn Wall Remix)
+Delta Heavy - Space City
+Thomas Hayes ft. Kyler England - Golden (Champion Remix)
+Blonde & Craig David - Nothing Like This (Kove Remix)
+Bensley - Fandango
+Logam & Mayhem - We Will
+Document One - Get Da Funk
+Kove - El Camino
+Metrik - Hi!
+Mind Vortex - Future Fold
+Decoder & Substance - Red (Document One Remix)
+Camo & Krooked - Ruhepuls
+Break - Aint No Turning Back
+Champion - Holding On
+Champion - Stratos
+Bensley - Outsider
+DC Breaks - Creeper VIP
+Fourward - What If ft. Rene
+Dawn Wall - Seeds of Change
+Metrik - Fatso
+Culture SHock - Low Frequency
+Drumsound & Bassline Smith - Shutdown
+Ekko & Sidetrack - Burgle
+SATL & Kasper - In the Sun
+Sub Focus - Nobody Knows
+Signal & Disprove - Fearless
+Signs - Quantum (Zombie Cats Remix)
+T & Sugah - Lost On My Own
+LSB - Missing You ft. DRS & Tyler Daley
+Break & Kyo - Simpler Times
+Prolix - Danger
+Insideinfo - Revolution ft. Miss Trouble
+Dope Ammu & Tali - Cold Rock A Party (Dossa & Locuzzed Remix)
+Sigma - Coming Home (ft Rita Ora) [Break Remix]
+Coppa - Oh No (Blaine Stranger Remix)
+Maverick Sabre - Emotion(Ain't Nobdy) (Dimension Remix)
+SATL & Kasper - In The Sun
+Ekko & Sidetrack - One Time
+Nero - Two Minds (Dimension Remix)
+Delta Heavy - Kill Room
+Dimension feat. Raphaella - Pull Me Under
+Adam F & Kokiri - Harmony feat. Rae (Prototypes Remix)
+Tam Cooper - Be Bold (Wilkinson Remix)
+Segment & Consept Vision - Mammoth
+Agressor Bunx - The Switch
+NickBee & Syze - Nowhere to Run
+Fourward - No Escape
+Akov - Twisted ft Ydott
+Kyrist & Barbarix - Maikuro Funk
+NickBee & Limel - Airkiss(Tobax Remix)
+NickBee & Syze - We Fight
+DLR & Octane - Stick & Move Feat. MC Fokus
+DLR & Octane - Gravity
+Fourward - Belly of the Beast
+Segment & Consept Vision - Roar
+Doctrine - Airlock
+Survival & Break - Stano
+NickBee - Ghetto Politics
+Fourward & Friction - Run Your Mouth
+Black Sun Empire & State Of Mind - The Cleaner
+Gridlok - Bottomfeeder (Gridlok Remix)
+Inward & Hanzo - N-Talk
+Noisia, Mefjus & Hybris - Reptilians
+Mean Teeth - ID
+L 33 - Complex Things
+DLR & Octane - Seven
+Detail - Human Trust
+Need For Mirrors - Domo
+Subtension - Offset
+Segment & Consept Vision - Vacuum
+Mean Teeth - Leviathan
+TC - Have you (Sound In Noise Remix)
+Fourward - Sequencer
+TC - Next Hype (Crissy Criss, Malux & Erb N Dub Remix)
+Original Sin - Red Mist
+Loadstar - Encarta
+Metrik - Western Jam
+Twenty One Pilots - Heathens (Audio Remix)
+Mean Teeth - Transfixed
+Rene LaVice - Richter Scale
+Dodge & Fuski - Your Love (Mob Tactics)
+Mean Teeth x Trilo - Gun Squad
+Blaine Stranger - Chat Shit, Get Banged
+Rene LaVice - Some Things Never Change
+The Prodigy - The Day is My Enemy (Bad Company UK Remix)
+Emeli Sandi - Hurts (Dimension Remix)
+Fourward & Mefjus - Everytime
+Metrik - Cadence feat. Reija Lee
+Mean Teeth - Hatch
+Mob Tactics - Now Is the Time
+Dan Dakota - Try Not To Worry
+The Prototypes - Rocket Guns Blazin
+Air.K & Cephei - Just Because
+Rockwell - Hoes To the Floor
+TC - Have you (SOUND IN NOISE REMIX)
+Galimatias - Noelles Eloquence (S.I.N. Remix)
+Ben Sage - Let me Down feat Shannon Swain (Subsonik Redux)
+Naughty Boy - Lifted feat. Emeli Sand (Loadstar Remix)
+Spectrasoul - AKA Yoob
+London Electricity - Why Are We Here (S.P.Y Remix)
+S.I.N. - For Your Side
+Karma - Unwounded feat Bonnie Wylde
+Technimatic - Montecristo
+Break - Pushing Me On
+GLXY - Remember To Forget
+Lenzman - Wordsworth VIP
+Pola & Bryson - So Free
+Lenzman - Grateful Ft DRS
+Dawn Wall - I See You
+NC-17 - Soldiers (Dossa & Locuzzed Remix)
+Karma & Forren - Augmented
+Basement Jaxx - Never Say Never (S.I.N. Rave Piano Bootleg)
+Karma - Make it Through
+Skrillex & Diplo - To Ü (S.I.N. Dirty Jungle Bootleg)
+Alex Adair - Make Me Feel Better (S.P.Y Remix)
+High Contrast - Wish You Were Here feat Selah Corbin (S.P.Y Remix)
+Alex Tweaker - Never Let Go
+Technimatic - Perseverance VIP
+Dephzac - Sum Is Wrong
+Dave Owen - Red Sky At Night
+Dawn Wall - Diplomatic
+Klangkarussell - Falls Like Rain(Camo & Krooked Remix)
+Camo & Krooked feat Metrik - Aurora
+Lana Del Rey - West Coast (Camo & Krooked Remix)
+Camo & Krooked - Global Waming
+Camo & Krooked feat Tali - Verve
+Camo & Krooked - Feel Your Pulse
+Rita Ora - Hot Right Now (Camo & Krooked Remix)
+Bungle ft. Ayah Marar - The Siren (Camo & Krooked Remix)
+Camo & Krooked - WKND
+Camo & Krooked - Tonight
+Metronomy - The Look - (Camo and Krooked Remix)
+Camo & Krooked - Climax
+Arno Cost & Arias - Magenta (Camo & Krooked remix)
+John B - Numbers (Camo & Krooked Remix)
+Camo & Krooked - Afterlife
+Camo & Krooked - Further Away
+Camo & Krooked - Far Away
+Camo & Krooked - Cryptkeeper
+Camo & Krooked - Can't Get Enough
+Camo & Krooked - Shoreless
+Camo & Krooked - Move Around (Ft. Ian Shaw)
+Camo & Krooked - All Night
+Camo & Krooked - Vice
+Friction vs Camo & Krooked - Stand Up ft. Dynamite MC
+Camo & Krooked - Run Riot VIP
+DJ Fresh - Talkbox (Camo & Krooked Remix)
+Knife Party & Tom Morello - Battle Sirens (Dima Pulsar Rework)
+Noisia - Could This be
+Black Sun Empire & State of Mind - Until the world ends (Mind Vortex remix)
+Kove ft. Folly Rae - Into the Fire
+Stylo G & Jacob Plant - Bike Engine (Loadstar Remix)
+Bl4ck Owlz - Fake
+Karma & Friction - Active
+Signs - The Pursuit
+Mefjus & InsideInfo - Repentance
+FooR & Sami Switch - Trouble (Crissy Criss Remix)
+Tantrum Desire - Genesis
+TC - Next Hype (Crissy Criss, Malux & Erb n Dub remix)
+Icicle feat Metropolis - The Edge
+Format:B - Chunky (The Prototypes Remix)
+Noisia - Hyenas
+Mind Vortex - Impulse
+Wilkinson - Redemption
+Dilemn & The Clamps - Knock It Down
+Smooth - Saturn 3
+Mefjus - Expedition
+Tantrum Desire - Oblivion VIP
+The Upbeats - Def Crescent (Neonlight & Wintermute Remix)
+Mind Vortex - Hotbox VIP
+Murdock & Doctrine - Arena (Rampage Anthem 2016)
+Ownglow - Like I can (Ownglow Remix)
+Dimension - Dark Lights
+Bensley ft Skyelle - One Last Chance
+Tantrum Desire feat MC Coppa - Repeat
+Sub Focus - Deep Space
+Ulterior Motive - Radian
+Data 3 - Caught In The Moment Ft. Blake
+Ed:It - Babylon Step
+Chimpo - Suga Rush
+Mayhem & Logam - Centuria (Amoss Remix)
+Karetus - Wall Of Love Ft. Diogo Picarra
+Mindscape - Buzzkill
+The Prototypes - Edge Of Tomorrow
+Current Value - Impact
+Planeet - Datascope
+LoKo - Time Flies
+Ulterior Motive - MIR
+Logistics - You Time
+Cyantific - Type A
+My Nu Leng & Flava D - Soul
+1991 - Shake (1991 Remix)
+Noisia - Anomaly
+Headread - Circulation
+Phace & Misanthrop - Channel Feel
+Planeet - Stop It
+Loadstar - Warrior
+Fourward - Talk to Me
+Insideinfo & Mefjus - Pulsation
+Dextone - Disection
+Ed Rush & Optical - Alien Girl
+NickBee - Third Entity
+Document One - Get Da funk
+Rido - Microwave Radiation
+Break - Time After Time
+Delta Heavy - Punish My Love (Delta Heavy 174 Mix)
+Drumsound & Bassline Smith - I'm Gone ft Bully
+Calyx & Teebee - Elevate This Sound
+Mob Tactics - Get Dirty
+Krakota - Half Life
+TC, Crissy Criss, Erb N Dub, Malux - Next Hype (TC, Crissy Criss, Erb N Dub & Malux remix)
+Numa Crew - Bass Hater
+WRLD - By Design
+Enei - Homeworld(Break Remix)
+Mob Tactics - Jabberwocky
+Blaine Stranger - Chat shit, Get Banged
+Mob Tactics - Now is the time
+TBA - TBA
+The Prototypes - Hypercube
+L Plus - Avenger
+The Prototypes - Rocket Gunz Blazin'
+The Prototypes - Lights
+Metrik - Terminus
+Calyx & Teebee - Ghostwriter
+Noisia - Collider (Teddy Killerz\"LHC\"Bootleg)
+Ownglow - Only U (Real Quick)
+Drumsound & Bassline Smith - Catch Me Here
+Netsky - Forget What You Look Like (Pola & Bryson Bootleg)
+Whiney - Teddy's Gate (ft. LaMeduza)
+Treex - Mad Habbit
+Technimatic - Music Is Music
+S9 ft. Kevin Lee Roy - Retrospect
+SpectraSoul - SM1
+Hayden James - Something About You (SpectraSoul Remix)
+Six Blade & A.M.C - Hardest To Love (feat Ayah Marar)
+Atlantic Connection - She's On Top
+Alix Perez - Can't You See
+Data 3 ft. Blake - Caught In The Moment
+Utah Jazz - Exploration
+Utah Jazz - Switch Up
+Ownglow - Angels Sing
+Royalston & Etherwood - Eyes On me
+Netsky - Drawing Straws
+Culture Shock & Brookes Brothers - Rework
+Pola & Bryson - Things I Do (Ownglow Remx)
+BassBrothers - I'm Out (ft. Kyara)
+Reflektor - Taste That
+Break - Strictly Entertainment
+TC feat. MC Fats - Quick Jungle
+Hugh Hardie feat. Silence Groove - City Soul
+I See Monstas  - Sinful (Teddy Killerz Remix)
+Fourward - Yung Bongo
+Cartoon - Feeling (Piece Of You)
+The Upbeats, Ivy Lab - Pharaoh
+Monument Banks - Sample Junkie
+Firefox - Buck Rogers (Bladerunner Remix)
+TC feat. Jakes - Rep (S.P.Y Remix)
+Dubbers feat. Doctor  - Be There For You (T & Sugah Remix)
+Document One - Klaxon
+Emperor - Foxholes
+TC - Have You
+Pendulum - Still Grey
+Dexplicit - Might Be (Rockwell Remix)
+Fred V & Grafix feat. Franko Fraize & Tone - Together We're Lost
+Logistics - Finish Line
+Fred V ja Grafix - Stay Here
+M.A.N.D.Y. Vs Booka - Donut (Logistics Remix)
+Prototypes - Rocket Gun Blazin
+Karetus - Wall Of Love
+DC Breaks - Bambino
+Wilkinson - Be Bold
+Fourward - Young Bongo
+Technimatic feat. Zara Kershaw - Parallel
+Phase 2 - London After Dark
+Black Sun Empire ja State Of Mind - Until The World Ends (Mind Vortex Remix)
+Uridium - Insomniax
+The Prototypes - Pop It Off (UZ Remix)
+Sub Focus - Out The Blue
+Cruk - Sucker Punch
+Ed:t - If and Only If
+Stardust - S.P.Y
+Maverick Souls - Fred V ja Grafix
+Delta Heavy - Ghost
+Dimension - Automatik
+Sander van Doorn, Martin Garrix ja DVBBS - Gold Skies feat. Aleesia (Metrik Remix)
+Plan B - Stay Too Long (Pendulum Remix)
+"

@@ -1,0 +1,4 @@
+"0","```r
+r2_ohtune_voond <- r2_ohtune_voond_raw %>% 
+  left_join(r2_saated_playlistide_kp, by = c(\"url\" = \"saade\", \"indeks\" = \"indeks\"))
+```"

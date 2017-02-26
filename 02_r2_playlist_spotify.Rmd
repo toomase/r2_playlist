@@ -1,0 +1,38 @@
+---
+title: "R2 playlistist Spotify playlist"
+output: html_notebook
+---
+
+Eesmärk on R2 lehelt kraabitud lugude nimekirjad konvertida Spotify playlistideks.
+
+```{r}
+library(tidyverse)
+library(stringr)
+```
+
+Lae kraabitud R2 playlistid
+```{r}
+load("output/r2_ohtune_voond_2016.RData")
+
+glimpse(r2_ohtune_voond)
+```
+
+Loetelu kõigist saadetest
+```{r}
+r2_ohtune_voond %>% 
+  mutate(saade = str_replace_all(url, "http://r2.err.ee/l/", "")) %>% 
+  distinct(saade) %>% 
+  .$saade
+```
+
+
+Koosta nimekiri ühe saate lugudest, et need siis http://www.playlist-converter.net/ lehel oleva konverteri abil Spotify playlistiks muuta (copy-paste).
+```{r}
+list <- r2_ohtune_voond %>% 
+  filter(str_detect(url, "grind")) %>% 
+  distinct(lugu) %>% 
+  .$lugu
+
+cat(paste0(list, collapse = "\n"))
+```
+

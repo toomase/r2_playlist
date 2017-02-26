@@ -1,0 +1,29 @@
+"0","```r
+playlist_arv <- function(saade, aasta = 2017){
+  # aasta indeks 2014-st aastast
+  aasta_2 <- aasta - 2014 + 1
+  
+    tryCatch(
+        {
+            remDr$navigate(saade)  # lehele navigeerimine
+            Sys.sleep(2)
+            # vali soovitud aasta
+            aasta <- remDr$findElement(using = 'css', 
+                                       paste(\".ng-scope.ng-binding:nth-child(\", aasta_2, \")\", 
+                                             sep = \"\"))
+            aasta$clickElement()
+            Sys.sleep(2)
+            doc <- read_html(remDr$getPageSource()[[1]])
+            
+            saadete_arv <- doc %>%
+              html_nodes(\"option\") %>% 
+              html_text() %>% 
+              data_frame() %>% 
+              select(kp = 1) %>% 
+              mutate(saade = saade)
+            
+            return(saadete_arv)
+        }, error = function(e) NULL
+    )
+}
+```"

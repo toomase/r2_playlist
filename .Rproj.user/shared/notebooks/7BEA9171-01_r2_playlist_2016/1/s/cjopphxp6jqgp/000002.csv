@@ -1,0 +1,9 @@
+"0","```r
+url <- r2_saated_playlistide_kp %>% 
+  count(saade) %>% 
+  .$saade
+  
+indeks <- r2_saated_playlistide_kp %>% 
+  count(saade) %>% 
+  .$n - 1
+```"

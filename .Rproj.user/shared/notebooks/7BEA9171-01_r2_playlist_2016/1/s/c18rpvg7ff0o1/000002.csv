@@ -1,0 +1,7 @@
+"0","```r
+system.time({
+r2_ohtune_voond_raw <- map2_df(url, indeks, .f = r2_playlist, 2016)
+
+save(r2_ohtune_voond_raw, file = \"output/r2_ohtune_voond_2016.RData\")
+})
+```"

@@ -1,0 +1,194 @@
+---
+title: "R2 õhtuse vööndi playlistis"
+output: html_notebook
+---
+
+Eesmärk on automaatselt kraapida R2 veebilehelt õhtuse vööndi playlistid, et need seejärel Spotify playlistideks teha.
+
+```{r setup}
+library(RSelenium)
+library(tidyverse)
+library(rvest)
+library(rdom)
+library(stringr)
+library(lubridate)
+```
+
+Koosta loetelu kõigist R2 õhtuse vööndi saadetest koos iga saate url-ga. URL on vajalik, et saate kodulehet playlistid kraapida.
+```{r}
+# Loetelu R2 õhtuse vööndi saadetest
+r2_saate_nimed <- read_html("http://r2.err.ee/l/saatesarjad", encoding = "utf-8")
+
+# R2 Õhtuse vööndi saadete nimed ja url-id
+r2_saated <- r2_saate_nimed %>%
+    html_nodes("section+ section h6") %>%
+    html_text() %>%
+    data.frame() %>%
+    select(saade = 1) %>%
+    # Saate nimest on tuletatud url. Kuna osade saadete url on erinev,
+    # siis nende url on käsitsi muudetud
+    mutate(url = str_to_lower(str_c("http://r2.err.ee/l/", 
+                                    str_replace_all(saade, " ", ""), sep = ""))) %>%
+    mutate(url = str_replace_all(url, "ö", "o")) %>%
+    mutate(url = str_replace_all(url, "ž", "z")) %>%
+    mutate(url = str_replace_all(url, "ä", "a")) %>%
+    mutate(url = ifelse(saade == "Deeper Shades Of House",
+                        "http://r2.err.ee/l/deeper_shades_of_house", url)) %>%
+    mutate(url = ifelse(saade == "Haigla saade",
+                        "http://r2.err.ee/l/haigla", url)) %>%
+    arrange(saade)
+
+# Saadete url vektoriks, et neid edaspidi kasutada
+saate_url <- r2_saated$url
+
+saate_url
+```
+
+RSeleniumi käivitamine playlistide kraapimiseks. Kuna R2 leht on javascriptis, siis ei saa seda tavapäraselt kraapida ja vaja on Seleniumit, et kunstlikult linke klikkida.
+Esmalt tuleb Ubuntu puhul käivitada Seleniumi server läbi shelli kahe käsurea:
+
+$ sudo docker run -d -p 4445:4444 selenium/standalone-firefox
+$ sudo docker ps
+
+Seleniumi serveri sulgemiseks (käsurea lõpus olev nr on Container ID, mille saab käivituse käsust $ sudo docker ps):
+$ sudo docker stop 7e8466a91673
+
+Seejärel saab ühenduse üles ning alustada veebilehe kraapimist.
+```{r}
+remDr <- remoteDriver(port = 4445L)
+remDr$open()
+```
+
+Kraabi kõigi saadete playlistide arv ja kuupäevad. See on vajalik, et hiljem ka playlistid ise kraapida. Kõigepealt koosta funktsioon ühe saate playlistide arvu kraapimiseks ning seejärel eraldi käivita see funktsioon kõigi saadete peale.
+
+```{r}
+playlist_arv <- function(saade, aasta = 2017){
+  # aasta indeks 2014-st aastast
+  aasta_2 <- aasta - 2014 + 1
+  
+    tryCatch(
+        {
+            remDr$navigate(saade)  # lehele navigeerimine
+            Sys.sleep(2)
+            # vali soovitud aasta
+            aasta <- remDr$findElement(using = 'css', 
+                                       paste(".ng-scope.ng-binding:nth-child(", aasta_2, ")", 
+                                             sep = ""))
+            aasta$clickElement()
+            Sys.sleep(2)
+            doc <- read_html(remDr$getPageSource()[[1]])
+            
+            saadete_arv <- doc %>%
+              html_nodes("option") %>% 
+              html_text() %>% 
+              data_frame() %>% 
+              select(kp = 1) %>% 
+              mutate(saade = saade)
+            
+            return(saadete_arv)
+        }, error = function(e) NULL
+    )
+}
+```
+
+Kraabi iga õhtuse vööndi saate kohta olemasolevate playlistide kuupäevad, et sellest omakorda tuletada indeksid playlistide enda kraapimiseks.
+```{r}
+r2_saated_playlistide_kp_raw <- map_df(saate_url, playlist_arv, 2016)
+
+r2_saated_playlistide_kp <- r2_saated_playlistide_kp_raw %>% 
+  mutate(kp = dmy(kp)) %>% 
+  arrange(saade, desc(kp)) %>% 
+  group_by(saade) %>% 
+  mutate(indeks = row_number() - 1)
+
+r2_saated_playlistide_kp
+```
+
+Kirjuta funkstioon, mis kraabib kõik olemasolevad playlistid valitud aasta kohta.
+```{r}
+# alamfunktsioon, mis klikib valitud saate kõik playlistid läbi ja kraabib lugude info. See on tehtud eraldi, et ei peaks iga playlisti jaoks uuesti veebilehte nullist avama.
+kraabi_playlist <- function(y, x){
+  tryCatch(
+    {
+      Sys.sleep(1)
+      # Kuupäevade valimine playlistide kuvamiseks
+      option <- remDr$findElement(using = 'xpath', 
+                                        paste("//*/option[@value = '", y, "']", sep = ""))
+      # Topelt klikk, et oleks valitud
+      option$clickElement()
+      Sys.sleep(1)
+      doc <- read_html(remDr$getPageSource()[[1]])
+
+      playlist_raw <- doc %>%
+        html_nodes(".playlistitem .ng-scope .ng-binding") %>%
+        html_text() %>%
+        str_trim() %>%
+        data.frame() %>%
+        filter(. != "") %>%
+        mutate(indeks = y, url = x) %>%
+        select(lugu = 1, indeks, url)
+            
+        return(playlist_raw)
+    }, error = function(e) NULL
+  )
+}
+  
+
+# Funktsioon playlisti lugude nimekirja kraapimiseks (url = saate url, indeks = saatega seotud playlistide arv kokku)
+r2_playlist <- function(url, indeks, aasta = 2017){
+  # aasta indeks 2014-st aastast
+  tryCatch(
+    {
+      aasta_2 <- aasta - 2014 + 1
+      remDr$navigate(url)  # lehele navigeerimine
+      Sys.sleep(2)
+      # vali soovitud aasta
+      aasta <- remDr$findElement(using = 'css',
+                                 paste(".ng-scope.ng-binding:nth-child(", aasta_2, ")",
+                                       sep = ""))
+      aasta$clickElement()
+      
+      # kliki iga saate kohta kõik valitud aasta playlistid läbi ja salvesta need maha
+      kokku <- map2_df(seq(0, indeks), url, kraabi_playlist)
+      
+      return(kokku)
+    }, error = function(e) NULL
+  )
+}
+```
+
+Koosta eraldi vektorid saate url-ga ning saatega seotud playlistide arvuga.
+```{r}
+url <- r2_saated_playlistide_kp %>% 
+  count(saade) %>% 
+  .$saade
+  
+indeks <- r2_saated_playlistide_kp %>% 
+  count(saade) %>% 
+  .$n - 1
+```
+
+Kraabi kõik valitud aasta playlistid ühe korraga ja salvest RData fail.
+```{r}
+system.time({
+r2_ohtune_voond_raw <- map2_df(url, indeks, .f = r2_playlist, 2016)
+
+save(r2_ohtune_voond_raw, file = "output/r2_ohtune_voond_2016.RData")
+})
+```
+
+```{r}
+glimpse(r2_ohtune_voond_raw)
+glimpse(r2_saated_playlistide_kp)
+```
+
+Lisa saadetele kuupäevad.
+```{r}
+r2_ohtune_voond <- r2_ohtune_voond_raw %>% 
+  left_join(r2_saated_playlistide_kp, by = c("url" = "saade", "indeks" = "indeks"))
+```
+
+Salvesta R2 õhtuse vööndi saated 2016. aasta kohta
+```{r}
+save(r2_ohtune_voond, file = "output/r2_ohtune_voond_2016.RData")
+```

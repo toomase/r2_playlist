@@ -1,0 +1,17 @@
+"0","```r
+r2_ohtune_voond %>% 
+  mutate(saade = str_replace_all(url, \"http://r2.err.ee/l/\", \"\")) %>% 
+  distinct(saade) %>% 
+  .$saade
+```"
+"1"," [1] \"bashmentfm\"           \"eestipops\"            \"etnokonservid\"       
+ [4] \"grindtape\"            \"haigla\"               \"horisont\"            
+ [7] \"iluskohtsuudlemiseks\" \"jazzitup\"             \"kaabel\"              
+[10] \"klubir2\"              \"linnadzungel\"         \"machinenation\"       
+[13] \"majamasin\"            \"metallion\"            \"nestorjamorna\"       
+[16] \"oogruuv\"              \"ootoo\"                \"programm\"            
+[19] \"progressioon\"         \"punkpolitsei\"         \"rahvaomakaitse\"      
+[22] \"rockiministeerium\"    \"sinusaade\"            \"tahetund\"            
+[25] \"tallinnexpress\"       \"tjuunin\"              \"trammjabuss\"         
+[28] \"urbanism\"             \"vibratsioon\"         
+"
